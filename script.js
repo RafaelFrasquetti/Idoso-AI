@@ -2,35 +2,36 @@
    1. CONTROLO DO TAMANHO DA LETRA
    ---------------------------------------------------- */
 function setFontSize(size) {
-  // Alterado de document.body para buscar a tag <corpo>
-  const corpoDoc = document.querySelector('corpo');
-  corpoDoc.classList.remove('font-normal', 'font-large', 'font-huge');
+  // Remover as classes de tamanho antigas do body
+  document.body.classList.remove('fonte-normal', 'fonte-grande', 'fonte-gigante');
   
   // Adicionar a classe selecionada
-  corpoDoc.classList.add('font-' + size);
+  if (size === 'normal') document.body.classList.add('fonte-normal');
+  if (size === 'large') document.body.classList.add('fonte-grande');
+  if (size === 'huge') document.body.classList.add('fonte-gigante');
 
   // Atualizar a classe ativa visual nos botões
-  document.getElementById('btn-font-normal').classList.remove('active');
-  document.getElementById('btn-font-large').classList.remove('active');
-  document.getElementById('btn-font-huge').classList.remove('active');
+  document.getElementById('btn-fonte-normal').classList.remove('ativo');
+  document.getElementById('btn-fonte-grande').classList.remove('ativo');
+  document.getElementById('btn-fonte-gigante').classList.remove('ativo');
 
-  document.getElementById('btn-font-' + size).classList.add('active');
+  if (size === 'normal') document.getElementById('btn-fonte-normal').classList.add('ativo');
+  if (size === 'large') document.getElementById('btn-fonte-grande').classList.add('ativo');
+  if (size === 'huge') document.getElementById('btn-fonte-gigante').classList.add('ativo');
 }
 
 /* ----------------------------------------------------
    2. CONTROLO DO MODO DE ALTO CONTRASTE
    ---------------------------------------------------- */
 function setContrast(isHigh) {
-  const corpoDoc = document.querySelector('corpo');
-  
   if (isHigh) {
-    corpoDoc.classList.add('high-contrast');
-    document.getElementById('btn-contrast-high').classList.add('active');
-    document.getElementById('btn-contrast-normal').classList.remove('active');
+    document.body.classList.add('alto-contraste');
+    document.getElementById('btn-contraste-alto').classList.add('ativo');
+    document.getElementById('btn-contraste-normal').classList.remove('ativo');
   } else {
-    corpoDoc.classList.remove('high-contrast');
-    document.getElementById('btn-contrast-normal').classList.add('active');
-    document.getElementById('btn-contrast-high').classList.remove('active');
+    document.body.classList.remove('alto-contraste');
+    document.getElementById('btn-contraste-normal').classList.add('ativo');
+    document.getElementById('btn-contraste-alto').classList.remove('ativo');
   }
 }
 
@@ -38,23 +39,23 @@ function setContrast(isHigh) {
    3. SISTEMA DE RESPOSTA DO SIMULADOR (QUIZ)
    ---------------------------------------------------- */
 function submitQuiz(userChoice) {
-  const responseBox = document.getElementById('quiz-result-box');
-  const resultTitle = document.getElementById('quiz-result-title');
-  const resultText = document.getElementById('quiz-result-text');
+  const responseBox = document.getElementById('caixa-resultado-quiz');
+  const resultTitle = document.getElementById('titulo-resultado-quiz');
+  const resultText = document.getElementById('texto-resultado-quiz');
   
-  const btnSafe = document.getElementById('btn-quiz-safe');
-  const btnScam = document.getElementById('btn-quiz-scam');
+  const btnSafe = document.getElementById('btn-quiz-seguro');
+  const btnScam = document.getElementById('btn-quiz-fraude');
 
   // Limpar estados visuais anteriores dos botões
-  btnSafe.classList.remove('selected-safe');
-  btnScam.classList.remove('selected-scam');
+  btnSafe.classList.remove('selecionado-seguro');
+  btnScam.classList.remove('selecionado-fraude');
 
   // Tornar o bloco de resposta visível
   responseBox.style.display = 'block';
 
   if (userChoice === 'safe') {
     // Escolha incorreta do utilizador
-    btnSafe.classList.add('selected-safe');
+    btnSafe.classList.add('selecionado-seguro');
     
     responseBox.style.backgroundColor = 'var(--danger-light)';
     responseBox.style.borderColor = 'var(--danger-color)';
@@ -64,7 +65,7 @@ function submitQuiz(userChoice) {
     resultText.textContent = 'Este endereço não pertence a nenhum banco oficial. Os criminosos utilizam links falsos semelhantes para roubar dados de acesso às contas ou para instalar vírus no seu telemóvel. O correto é nunca clicar.';
   } else {
     // Escolha correta do utilizador
-    btnScam.classList.add('selected-scam');
+    btnScam.classList.add('selecionado-fraude');
     
     responseBox.style.backgroundColor = 'var(--success-light)';
     responseBox.style.borderColor = 'var(--success-color)';
@@ -80,22 +81,22 @@ function submitQuiz(userChoice) {
    ---------------------------------------------------- */
 function toggleChecklist(itemId) {
   const labelElement = document.getElementById(itemId);
-  const checkbox = labelElement.querySelector('.giant-checkbox');
+  const checkbox = labelElement.querySelector('.caixa-selecao-gigante');
 
   // Atualizar o visual do item com base na seleção
   if (checkbox.checked) {
-    labelElement.classList.add('completed');
+    labelElement.classList.add('concluido');
   } else {
-    labelElement.classList.remove('completed');
+    labelElement.classList.remove('concluido');
   }
 
   // Calcular o progresso total
-  const totalItems = document.querySelectorAll('.checklist-item').length;
-  const completedItems = document.querySelectorAll('.checklist-item.completed').length;
+  const totalItems = document.querySelectorAll('.item-checklist').length;
+  const completedItems = document.querySelectorAll('.item-checklist.concluido').length;
   
   const percentage = Math.round((completedItems / totalItems) * 100);
 
   // Atualizar a barra de progresso no ecrã
-  document.getElementById('checklist-bar').style.width = percentage + '%';
-  document.getElementById('checklist-percentage').textContent = percentage + '% Completo';
+  document.getElementById('barra-checklist').style.width = percentage + '%';
+  document.getElementById('porcentagem-checklist').textContent = percentage + '% Completo';
 }

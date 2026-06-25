@@ -6,173 +6,66 @@
   <title>Guia Digital Seguro - Segurança Fácil para Seniores</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="font-normal">
+<body class="fonte-normal">
 
-  <div class="app-wrapper">
+  <div class="aplicativo-container">
 
-    <header class="accessibility-bar" aria-label="Ajustes de Leitura">
-      <div class="acc-container">
+    <header class="barra-acessibilidade" aria-label="Ajustes de Leitura">
+      <div class="container-acessibilidade">
         
-        <div class="acc-group">
-          <span class="acc-label">Tamanho do Texto:</span>
-          <button id="btn-font-normal" class="acc-btn active" onclick="setFontSize('normal')" aria-label="Texto de tamanho normal">Normal</button>
-          <button id="btn-font-large" class="acc-btn" onclick="setFontSize('large')" aria-label="Texto de tamanho grande">Grande</button>
-          <button id="btn-font-huge" class="acc-btn" onclick="setFontSize('huge')" aria-label="Texto de tamanho gigante">Gigante</button>
+        <div class="grupo-acessibilidade">
+          <span class="rotulo-acessibilidade">Tamanho do Texto:</span>
+          <button id="btn-fonte-normal" class="botao-acessibilidade ativo" onclick="setFontSize('normal')" aria-label="Texto de tamanho normal">Normal</button>
+          <button id="btn-fonte-grande" class="botao-acessibilidade" onclick="setFontSize('large')" aria-label="Texto de tamanho grande">Grande</button>
+          <button id="btn-fonte-gigante" class="botao-acessibilidade" onclick="setFontSize('huge')" aria-label="Texto de tamanho gigante">Gigante</button>
         </div>
 
-        <div class="acc-group">
-          <span class="acc-label">Visualização:</span>
-          <button id="btn-contrast-normal" class="acc-btn active" onclick="setContrast(false)" aria-label="Cores claras normais">🎨 Claro Padrão</button>
-          <button id="btn-contrast-high" class="acc-btn" onclick="setContrast(true)" aria-label="Ativar Alto Contraste">👁️ Alto Contraste</button>
+        <div class="grupo-acessibilidade">
+          <span class="rotulo-acessibilidade">Visualização:</span>
+          <button id="btn-contraste-normal" class="botao-acessibilidade ativo" onclick="setContrast(false)" aria-label="Cores claras normais">🎨 Claro Padrão</button>
+          <button id="btn-contraste-alto" class="botao-acessibilidade" onclick="setContrast(true)" aria-label="Ativar Alto Contraste">👁️ Alto Contraste</button>
         </div>
 
       </div>
     </header>
 
-    <main class="main-container">
+    <main class="container-principal">
       
-      <section class="hero-section">
-        <span class="hero-badge">GUIA DE SEGURANÇA</span>
-        <h1 class="hero-title">Internet Sem Medo</h1>
-        <p class="hero-subtitle">
+      <section class="secao-destaque">
+        <span class="emblema-destaque">GUIA DE SEGURANÇA</span>
+        <h1 class="titulo-destaque">Internet Sem Medo</h1>
+        <p class="subtitulo-destaque">
           Descubra dicas simples para navegar no computador ou telemóvel de forma protegida e confiante.
         </p>
       </section>
 
       <section aria-label="Dicas de proteção">
-        <h2 class="section-title">💡 Dicas de Proteção Essenciais</h2>
+        <h2 class="titulo-secao">💡 Dicas de Proteção Essenciais</h2>
         
-        <div class="tips-grid">
+        <div class="grade-dicas">
           
-          <details class="tip-card">
-            <summary class="tip-header">1. Criar palavras-passe fortes e seguras</summary>
-            <div class="tip-content">
+          <details class="cartao-dica">
+            <summary class="cabecalho-dica">1. Criar palavras-passe fortes e seguras</summary>
+            <div class="conteudo-dica">
               <p>As palavras-passe são barreiras de proteção vitais que impedem estranhos de entrar nas suas contas.</p>
               
-              <div class="alert-box do">
-                <p class="alert-title green">✔️ DICA SEGURA:</p>
+              <div class="caixa-alerta correto">
+                <p class="titulo-alerta verde">✔️ DICA SEGURA:</p>
                 <p>Use frases fáceis de fixar na memória, juntando palavras e números. Exemplo: <strong>"CafeComLeiteQuente10!"</strong></p>
               </div>
 
-              <div class="alert-box dont">
-                <p class="alert-title red">❌ EVITE:</p>
+              <div class="caixa-alerta evitar">
+                <p class="titulo-alerta vermelho">❌ EVITE:</p>
                 <p>Usar a sua data de nascimento, sequências óbvias (como 12345) ou o nome próprio de familiares.</p>
               </div>
             </div>
           </details>
 
-          <details class="tip-card">
-            <summary class="tip-header">2. A burla do familiar no WhatsApp (Novo número)</summary>
-            <div class="tip-content">
+          <details class="cartao-dica">
+            <summary class="cabecalho-dica">2. A burla do familiar no WhatsApp (Novo número)</summary>
+            <div class="conteudo-dica">
               <p>Ocorre quando pessoas mal-intencionadas dizem ser os seus filhos ou netos num número diferente, alegando que perderam o antigo e pedindo ajuda urgente em dinheiro.</p>
               
-              <div class="alert-box do">
-                <p class="alert-title green">✔️ DICA SEGURA:</p>
-                <p>Telefone de imediato para o número antigo do seu familiar ou faça uma videochamada direta para ter a certeza absoluta da identidade.</p>
-              </div>
-
-              <div class="alert-box dont">
-                <p class="alert-title red">❌ EVITE:</p>
-                <p>Nunca envie dinheiro por transferência bancária ou via MB WAY antes de ouvir a voz e confirmar a situação.</p>
-              </div>
-            </div>
-          </details>
-
-          <details class="tip-card">
-            <summary class="tip-header">3. Links azuis perigosos em mensagens</summary>
-            <div class="tip-content">
-              <p>Mensagens urgentes que avisam que a sua conta bancária está congelada ou que tem uma encomenda retida são esquemas muito frequentes.</p>
-              
-              <div class="alert-box do">
-                <p class="alert-title green">✔️ DICA SEGURA:</p>
-                <p>Ignore as mensagens de texto e use diretamente a aplicação móvel oficial do seu banco no telemóvel para verificar qualquer aviso.</p>
-              </div>
-
-              <div class="alert-box dont">
-                <p class="alert-title red">❌ EVITE:</p>
-                <p>Nunca clique em ligações ou links recebidos através de números de telefone que não conhece.</p>
-              </div>
-            </div>
-          </details>
-
-        </div>
-      </section>
-
-      <section aria-label="Desafio de treino">
-        <h2 class="section-title">🛡️ Treino de Segurança Interativo</h2>
-        
-        <div class="simulator-card">
-          <p style="margin-bottom: 1.2rem;">Faça de conta que recebeu a seguinte mensagem de texto no ecrã do seu telemóvel. Analise o conteúdo:</p>
-
-          <div class="phone-mockup">
-            <div class="phone-header">Mensagem de Alerta</div>
-            <div class="sms-balloon">
-              ALERTA SEGURANÇA: Detetámos um acesso suspeito na sua conta bancária. Para evitar a suspensão imediata, clique em: <span class="sms-link">www.seguro-banco-ajuda.com/bloqueio</span>
-            </div>
-          </div>
-
-          <p style="text-align: center; margin-top: 1rem; font-weight: bold;">O que faria nesta situação?</p>
-
-          <div class="quiz-options">
-            <button id="btn-quiz-safe" class="quiz-btn" onclick="submitQuiz('safe')">🟢 É SEGURO: Vou clicar para confirmar</button>
-            <button id="btn-quiz-scam" class="quiz-btn" onclick="submitQuiz('scam')">🚨 É FRAUDE: Vou apagar e ignorar</button>
-          </div>
-
-          <div id="quiz-result-box" class="quiz-response">
-            <h3 id="quiz-result-title" style="margin-bottom: 0.5rem;"></h3>
-            <p id="quiz-result-text"></p>
-          </div>
-
-        </div>
-      </section>
-
-      <section aria-label="Lista de verificação de hábitos">
-        <div class="checklist-card">
-          <h2 class="section-title">✅ O meu Checklist de Segurança</h2>
-          <p style="margin-bottom: 1rem;">Marque as práticas de proteção digital que já adota no seu dia a dia:</p>
-          
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-            <span style="font-weight: bold;">Progresso:</span>
-            <span id="checklist-percentage" style="font-weight: bold; color: var(--success-color);">0% Completo</span>
-          </div>
-          <div class="progress-container">
-            <div id="checklist-bar" class="progress-bar"></div>
-          </div>
-
-          <div style="margin-top: 1.5rem;">
-            
-            <label class="checklist-item" id="item-1">
-              <input type="checkbox" class="giant-checkbox" onchange="toggleChecklist('item-1')">
-              <span class="checklist-text">Tenho palavras-passe exclusivas e diferentes para as minhas aplicações mais importantes.</span>
-            </label>
-
-            <label class="checklist-item" id="item-2">
-              <input type="checkbox" class="giant-checkbox" onchange="toggleChecklist('item-2')">
-              <span class="checklist-text">Evito utilizar ligações de Wi-Fi públicas sem palavra-passe quando acedo à minha conta bancária.</span>
-            </label>
-
-            <label class="checklist-item" id="item-3">
-              <input type="checkbox" class="giant-checkbox" onchange="toggleChecklist('item-3')">
-              <span class="checklist-text">Não partilho códigos de segurança temporários recebidos por SMS com ninguém.</span>
-            </label>
-
-          </div>
-        </div>
-      </section>
-
-      <section aria-label="Contactos de emergência">
-        <div class="contacts-card">
-          <h3>📞 Precisa de apoio rápido?</h3>
-          <p>Caso tenha dúvidas ou suspeite que foi alvo de fraude, entre em contacto imediatamente com os canais de apoio:</p>
-          
-          <ul class="contacts-list">
-            <li>
-              <a href="tel:112" class="contact-item-btn" title="Ligar para o número de emergência nacional">
-                <span>Polícia / Emergência (Nacional)</span>
-                <span class="contact-phone-badge">Ligue 112</span>
-              </a>
-            </li>
-            <li>
-              <div class="contact-item-btn" style="cursor: default;">
-                <span>Familiar próximo da sua confiança</span>
-                <span class="contact-phone-
+              <div class="caixa-alerta correto">
+                <p class="titulo-alerta verde">✔️ DICA SEGURA:</p>
+                <p>Telefone de imediato para o número antigo do seu familiar ou faça uma videochamada direta para ter a certeza absoluta da identidade.</

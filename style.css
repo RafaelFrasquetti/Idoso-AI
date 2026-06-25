@@ -1,22 +1,20 @@
 /* Variáveis de Design - Tema Claro Padrão */
 :root {
-  --bg-color: #f8fafc;          
-  --card-bg: #ffffff;           
-  --text-color: #1e293b;        
-  --text-muted: #475569;        
-  --border-color: #e2e8f0;      
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --text-color: #1e293b;
+  --text-muted: #475569;
+  --border-color: #e2e8f0;
   
-  /* Cores de Destaque */
-  --primary-color: #2563eb;     
-  --primary-light: #eff6ff;     
-  --success-color: #16a34a;     
+  --primary-color: #2563eb;
+  --primary-light: #eff6ff;
+  --success-color: #16a34a;
   --success-light: #f0fdf4;
-  --warning-color: #ea580c;     
+  --warning-color: #ea580c;
   --warning-light: #fff7ed;
-  --danger-color: #dc2626;      
+  --danger-color: #dc2626;
   --danger-light: #fef2f2;
   
-  /* Elementos do Simulador de Telemóvel */
   --phone-bg: #f1f5f9;
   --phone-header-bg: #0f172a;
   --phone-header-text: #ffffff;
@@ -24,31 +22,30 @@
   --sms-text: #1e293b;
   --link-color: #2563eb;
 
-  /* Configurações Base */
   --border-radius: 16px;
   --focus-ring: 4px solid #2563eb;
 }
 
-/* Alteração Dinâmica via Classes JS (Tamanhos de Letra) */
-corpo.font-normal { font-size: 1.15rem; }
-corpo.font-large { font-size: 1.35rem; }
-corpo.font-huge { font-size: 1.6rem; }
+/* Alteração Dinâmica via Classes JS */
+body.fonte-normal { font-size: 1.15rem; }
+body.fonte-grande { font-size: 1.35rem; }
+body.fonte-gigante { font-size: 1.6rem; }
 
 /* Alteração Dinâmica para ALTO CONTRASTE */
-corpo.high-contrast {
+body.alto-contraste {
   --bg-color: #000000;
   --card-bg: #000000;
   --text-color: #ffffff;
   --text-muted: #f1f5f9;
   --border-color: #ffffff;
   
-  --primary-color: #ffff00;     
+  --primary-color: #ffff00;
   --primary-light: #121212;
-  --success-color: #00ff00;     
+  --success-color: #00ff00;
   --success-light: #121212;
-  --warning-color: #ffff00;     
+  --warning-color: #ffff00;
   --warning-light: #121212;
-  --danger-color: #ff3333;      
+  --danger-color: #ff3333;
   --danger-light: #121212;
 
   --phone-bg: #000000;
@@ -68,7 +65,7 @@ corpo.high-contrast {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-corpo {
+body {
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
@@ -82,14 +79,14 @@ corpo {
 }
 
 /* Estrutura Principal */
-.app-wrapper {
+.aplicativo-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 /* Barra de Acessibilidade */
-.accessibility-bar {
+.barra-acessibilidade {
   background-color: var(--card-bg);
   border-bottom: 2px solid var(--border-color);
   padding: 0.8rem 1rem;
@@ -99,7 +96,7 @@ corpo {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-.acc-container {
+.container-acessibilidade {
   max-width: 1000px;
   margin: 0 auto;
   display: flex;
@@ -109,20 +106,19 @@ corpo {
   gap: 1rem;
 }
 
-.acc-group {
+.grupo-acessibilidade {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.acc-label {
+.rotulo-acessibilidade {
   font-weight: bold;
   font-size: 0.95rem;
   color: var(--text-muted);
 }
 
-/* Botões Grandes e Confortáveis */
-.acc-btn {
+.botao-acessibilidade {
   display: inline-block;
   padding: 0.6rem 1.1rem;
   background-color: var(--bg-color);
@@ -136,19 +132,18 @@ corpo {
   transition: all 0.2s;
 }
 
-.acc-btn:hover {
+.botao-acessibilidade:hover {
   border-color: var(--primary-color);
 }
 
-/* Classe Ativa do Botão (Aplicada por JS) */
-.acc-btn.active {
+.botao-acessibilidade.ativo {
   background-color: var(--primary-color);
   color: var(--card-bg);
   border-color: var(--primary-color);
 }
 
 /* Área Central */
-.main-container {
+.container-principal {
   max-width: 850px;
   width: 100%;
   margin: 2.5rem auto;
@@ -157,7 +152,7 @@ corpo {
 }
 
 /* Cabeçalho do App */
-.hero-section {
+.secao-destaque {
   text-align: center;
   margin-bottom: 2.5rem;
   padding: 2.5rem;
@@ -166,7 +161,7 @@ corpo {
   border-radius: var(--border-radius);
 }
 
-.hero-badge {
+.emblema-destaque {
   display: inline-block;
   padding: 0.4rem 1.2rem;
   background-color: var(--primary-color);
@@ -177,20 +172,20 @@ corpo {
   font-size: 0.9rem;
 }
 
-.hero-title {
+.titulo-destaque {
   font-size: 2.4rem;
   color: var(--primary-color);
   margin-bottom: 1rem;
   line-height: 1.2;
 }
 
-.hero-subtitle {
+.subtitulo-destaque {
   font-size: 1.25rem;
   color: var(--text-color);
 }
 
 /* Títulos de Seção */
-.section-title {
+.titulo-secao {
   font-size: 1.7rem;
   color: var(--primary-color);
   margin-bottom: 1.5rem;
@@ -199,14 +194,14 @@ corpo {
 }
 
 /* Detalhes/Acordeões de Dicas */
-.tips-grid {
+.grade-dicas {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
   margin-bottom: 3.5rem;
 }
 
-detalhes.tip-card {
+details.cartao-dica {
   background-color: var(--card-bg);
   border: 2px solid var(--border-color);
   border-radius: var(--border-radius);
@@ -214,11 +209,11 @@ detalhes.tip-card {
   box-shadow: 0 2px 5px rgba(0,0,0,0.02);
 }
 
-detalhes.tip-card[open] {
+details.cartao-dica[open] {
   border-color: var(--primary-color);
 }
 
-resumo.tip-header {
+summary.cabecalho-dica {
   padding: 1.4rem;
   font-weight: bold;
   font-size: 1.25rem;
@@ -230,11 +225,11 @@ resumo.tip-header {
   list-style: none;
 }
 
-resumo.tip-header::-webkit-details-marker {
+summary.cabecalho-dica::-webkit-details-marker {
   display: none;
 }
 
-resumo.tip-header::after {
+summary.cabecalho-dica::after {
   content: "➕ Abrir";
   font-size: 0.95rem;
   background-color: var(--primary-light);
@@ -245,45 +240,45 @@ resumo.tip-header::after {
   border: 1px solid var(--border-color);
 }
 
-detalhes.tip-card[open] resumo.tip-header::after {
+details.cartao-dica[open] summary.cabecalho-dica::after {
   content: "➖ Fechar";
   background-color: var(--warning-light);
   color: var(--warning-color);
 }
 
-.tip-content {
+.conteudo-dica {
   padding: 1.5rem;
   border-top: 2px solid var(--border-color);
 }
 
 /* Caixas de Alerta */
-.alert-box {
+.caixa-alerta {
   margin-top: 1rem;
   padding: 1.25rem;
   border-radius: 10px;
 }
 
-.alert-box.do {
+.caixa-alerta.correto {
   background-color: var(--success-light);
   border-left: 6px solid var(--success-color);
 }
 
-.alert-box.dont {
+.caixa-alerta.evitar {
   background-color: var(--danger-light);
   border-left: 6px solid var(--danger-color);
 }
 
-.alert-title {
+.titulo-alerta {
   font-weight: bold;
   font-size: 1.1rem;
   margin-bottom: 0.4rem;
 }
 
-.alert-title.green { color: var(--success-color); }
-.alert-title.red { color: var(--danger-color); }
+.titulo-alerta.verde { color: var(--success-color); }
+.titulo-alerta.vermelho { color: var(--danger-color); }
 
 /* Simulador de Telemóvel */
-.simulator-card {
+.cartao-simulador {
   background-color: var(--card-bg);
   border: 2px solid var(--border-color);
   border-radius: var(--border-radius);
@@ -291,7 +286,7 @@ detalhes.tip-card[open] resumo.tip-header::after {
   margin-bottom: 3.5rem;
 }
 
-.phone-mockup {
+.miniatura-telemovel {
   background-color: var(--phone-bg);
   border: 4px solid var(--border-color);
   border-radius: 20px;
@@ -300,7 +295,7 @@ detalhes.tip-card[open] resumo.tip-header::after {
   margin: 1.5rem auto;
 }
 
-.phone-header {
+.cabecalho-telemovel {
   background-color: var(--phone-header-bg);
   color: var(--phone-header-text);
   padding: 0.6rem;
@@ -312,7 +307,7 @@ detalhes.tip-card[open] resumo.tip-header::after {
   font-size: 0.95rem;
 }
 
-.sms-balloon {
+.balao-sms {
   background-color: var(--sms-bg);
   color: var(--sms-text);
   padding: 1.1rem;
@@ -322,7 +317,7 @@ detalhes.tip-card[open] resumo.tip-header::after {
   font-size: 1.1rem;
 }
 
-.sms-link {
+.link-sms {
   color: var(--link-color);
   text-decoration: underline;
   font-weight: bold;
@@ -330,7 +325,7 @@ detalhes.tip-card[open] resumo.tip-header::after {
 }
 
 /* Botões do Simulador */
-.quiz-options {
+.opcoes-quiz {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -338,7 +333,7 @@ detalhes.tip-card[open] resumo.tip-header::after {
   margin: 1.5rem auto 0 auto;
 }
 
-.quiz-btn {
+.botao-quiz {
   display: block;
   width: 100%;
   padding: 1.1rem;
@@ -353,25 +348,24 @@ detalhes.tip-card[open] resumo.tip-header::after {
   transition: all 0.2s;
 }
 
-.quiz-btn:hover {
+.botao-quiz:hover {
   border-color: var(--primary-color);
 }
 
-/* Botão do simulador ativado */
-.quiz-btn.selected-safe {
+.botao-quiz.selecionado-seguro {
   background-color: var(--success-color);
   color: #ffffff;
   border-color: var(--success-color);
 }
 
-.quiz-btn.selected-scam {
+.botao-quiz.selecionado-fraude {
   background-color: var(--danger-color);
   color: #ffffff;
   border-color: var(--danger-color);
 }
 
-/* Caixas de Resposta Customizadas por JS */
-.quiz-response {
+/* Caixas de Resposta */
+.resposta-quiz {
   display: none; 
   margin-top: 1.5rem;
   padding: 1.5rem;
@@ -386,7 +380,7 @@ detalhes.tip-card[open] resumo.tip-header::after {
 }
 
 /* Checklist de Segurança */
-.checklist-card {
+.cartao-checklist {
   background-color: var(--card-bg);
   border: 2px solid var(--border-color);
   border-radius: var(--border-radius);
@@ -394,7 +388,7 @@ detalhes.tip-card[open] resumo.tip-header::after {
   margin-bottom: 3.5rem;
 }
 
-.checklist-item {
+.item-checklist {
   display: flex;
   align-items: flex-start;
   gap: 1.1rem;
@@ -403,11 +397,11 @@ detalhes.tip-card[open] resumo.tip-header::after {
   cursor: pointer;
 }
 
-.checklist-item:last-child {
+.item-checklist:last-child {
   border-bottom: none;
 }
 
-.giant-checkbox {
+.caixa-selecao-gigante {
   width: 1.8rem;
   height: 1.8rem;
   cursor: pointer;
@@ -416,18 +410,16 @@ detalhes.tip-card[open] resumo.tip-header::after {
   flex-shrink: 0;
 }
 
-/* Progresso Visual do Checklist */
-.checklist-text {
+.texto-checklist {
   transition: color 0.2s;
 }
 
-.checklist-item.completed .checklist-text {
+.item-checklist.concluido .texto-checklist {
   color: var(--success-color);
   font-weight: bold;
 }
 
-/* Progresso geral em barra */
-.progress-container {
+.container-progresso {
   background-color: var(--bg-color);
   border-radius: 50px;
   height: 12px;
@@ -437,7 +429,7 @@ detalhes.tip-card[open] resumo.tip-header::after {
   border: 1px solid var(--border-color);
 }
 
-.progress-bar {
+.barra-progresso {
   height: 100%;
   width: 0%;
   background-color: var(--success-color);
@@ -445,7 +437,7 @@ detalhes.tip-card[open] resumo.tip-header::after {
 }
 
 /* Cartão de Ajuda */
-.contacts-card {
+.cartao-contactos {
   background-color: var(--warning-light);
   border: 2px solid var(--warning-color);
   border-radius: var(--border-radius);
@@ -453,13 +445,13 @@ detalhes.tip-card[open] resumo.tip-header::after {
   margin-bottom: 3rem;
 }
 
-.contacts-card titulo3 {
+.cartao-contactos h3 {
   color: var(--warning-color);
   font-size: 1.45rem;
   margin-bottom: 0.75rem;
 }
 
-.contacts-list {
+.lista-contactos {
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -467,7 +459,7 @@ detalhes.tip-card[open] resumo.tip-header::after {
   margin-top: 1.5rem;
 }
 
-.contact-item-btn {
+.botao-item-contacto {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -482,11 +474,11 @@ detalhes.tip-card[open] resumo.tip-header::after {
   transition: all 0.2s;
 }
 
-.contact-item-btn:hover {
+.botao-item-contacto:hover {
   transform: translateY(-2px);
 }
 
-.contact-phone-badge {
+.emblema-telefone-contacto {
   background-color: var(--warning-color);
   color: #ffffff;
   padding: 0.4rem 1rem;
@@ -494,7 +486,7 @@ detalhes.tip-card[open] resumo.tip-header::after {
 }
 
 /* Rodapé */
-.app-footer {
+.rodape-aplicativo {
   background-color: var(--card-bg);
   border-top: 2px solid var(--border-color);
   padding: 2.5rem 1.25rem;
@@ -502,29 +494,29 @@ detalhes.tip-card[open] resumo.tip-header::after {
   margin-top: auto;
 }
 
-.footer-note {
+.nota-rodape {
   font-size: 1rem;
   color: var(--text-muted);
   max-width: 600px;
   margin: 0 auto;
 }
 
-/* Ajustes para Ecrãs Pequenos (Telemóvel) */
+/* Ajustes para Ecrãs Pequenos */
 @media (max-width: 600px) {
-  .acc-container {
+  .container-acessibilidade {
     flex-direction: column;
     align-items: stretch;
   }
-  .acc-group {
+  .grupo-acessibilidade {
     justify-content: space-between;
   }
-  .hero-section {
+  .secao-destaque {
     padding: 1.5rem;
   }
-  .hero-title {
+  .titulo-destaque {
     font-size: 1.9rem;
   }
-  .contact-item-btn {
+  .botao-item-contacto {
     flex-direction: column;
     align-items: stretch;
     gap: 0.75rem;
