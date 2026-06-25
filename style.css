@@ -79,7 +79,7 @@ body {
 }
 
 /* Estrutura Principal */
-.aplicativo-container {
+.estrutura-aplicativo {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -96,7 +96,7 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-.container-acessibilidade {
+.contentor-acessibilidade {
   max-width: 1000px;
   margin: 0 auto;
   display: flex;
@@ -143,7 +143,7 @@ body {
 }
 
 /* Área Central */
-.container-principal {
+.contentor-principal {
   max-width: 850px;
   width: 100%;
   margin: 2.5rem auto;
@@ -286,7 +286,7 @@ details.cartao-dica[open] summary.cabecalho-dica::after {
   margin-bottom: 3.5rem;
 }
 
-.miniatura-telemovel {
+.maquete-telemovel {
   background-color: var(--phone-bg);
   border: 4px solid var(--border-color);
   border-radius: 20px;
@@ -352,13 +352,14 @@ details.cartao-dica[open] summary.cabecalho-dica::after {
   border-color: var(--primary-color);
 }
 
-.botao-quiz.selecionado-seguro {
+/* Botões de Feedback Corrigidos Visualmente */
+.botao-quiz.selecionado-correto {
   background-color: var(--success-color);
   color: #ffffff;
   border-color: var(--success-color);
 }
 
-.botao-quiz.selecionado-fraude {
+.botao-quiz.selecionado-errado {
   background-color: var(--danger-color);
   color: #ffffff;
   border-color: var(--danger-color);
@@ -419,7 +420,7 @@ details.cartao-dica[open] summary.cabecalho-dica::after {
   font-weight: bold;
 }
 
-.container-progresso {
+.contentor-progresso {
   background-color: var(--bg-color);
   border-radius: 50px;
   height: 12px;
@@ -486,7 +487,7 @@ details.cartao-dica[open] summary.cabecalho-dica::after {
 }
 
 /* Rodapé */
-.rodape-aplicativo {
+.rodape-app {
   background-color: var(--card-bg);
   border-top: 2px solid var(--border-color);
   padding: 2.5rem 1.25rem;
@@ -501,9 +502,9 @@ details.cartao-dica[open] summary.cabecalho-dica::after {
   margin: 0 auto;
 }
 
-/* Ajustes para Ecrãs Pequenos */
+/* Ajustes Mobile */
 @media (max-width: 600px) {
-  .container-acessibilidade {
+  .contentor-acessibilidade {
     flex-direction: column;
     align-items: stretch;
   }

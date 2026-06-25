@@ -8,16 +8,16 @@
 </head>
 <body class="fonte-normal">
 
-  <div class="aplicativo-container">
+  <div class="estrutura-aplicativo">
 
     <header class="barra-acessibilidade" aria-label="Ajustes de Leitura">
-      <div class="container-acessibilidade">
+      <div class="contentor-acessibilidade">
         
         <div class="grupo-acessibilidade">
           <span class="rotulo-acessibilidade">Tamanho do Texto:</span>
           <button id="btn-fonte-normal" class="botao-acessibilidade ativo" onclick="setFontSize('normal')" aria-label="Texto de tamanho normal">Normal</button>
-          <button id="btn-fonte-grande" class="botao-acessibilidade" onclick="setFontSize('large')" aria-label="Texto de tamanho grande">Grande</button>
-          <button id="btn-fonte-gigante" class="botao-acessibilidade" onclick="setFontSize('huge')" aria-label="Texto de tamanho gigante">Gigante</button>
+          <button id="btn-fonte-grande" class="botao-acessibilidade" onclick="setFontSize('grande')" aria-label="Texto de tamanho grande">Grande</button>
+          <button id="btn-fonte-gigante" class="botao-acessibilidade" onclick="setFontSize('gigante')" aria-label="Texto de tamanho gigante">Gigante</button>
         </div>
 
         <div class="grupo-acessibilidade">
@@ -29,7 +29,7 @@
       </div>
     </header>
 
-    <main class="container-principal">
+    <main class="contentor-principal">
       
       <section class="secao-destaque">
         <span class="emblema-destaque">GUIA DE SEGURANÇA</span>
@@ -68,4 +68,132 @@
               
               <div class="caixa-alerta correto">
                 <p class="titulo-alerta verde">✔️ DICA SEGURA:</p>
-                <p>Telefone de imediato para o número antigo do seu familiar ou faça uma videochamada direta para ter a certeza absoluta da identidade.</
+                <p>Telefone de imediato para o número antigo do seu familiar ou faça uma videochamada direta para ter a certeza absoluta da identidade.</p>
+              </div>
+
+              <div class="caixa-alerta evitar">
+                <p class="titulo-alerta vermelho">❌ EVITE:</p>
+                <p>Nunca envie dinheiro por transferência bancária ou via MB WAY antes de ouvir a voz e confirmar a situação.</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="cartao-dica">
+            <summary class="cabecalho-dica">3. Links azuis perigosos em mensagens</summary>
+            <div class="conteudo-dica">
+              <p>Mensagens urgentes que avisam que a sua conta bancária está congelada ou que tem uma encomenda retida são esquemas muito frequentes.</p>
+              
+              <div class="caixa-alerta correto">
+                <p class="titulo-alerta verde">✔️ DICA SEGURA:</p>
+                <p>Ignore as mensagens de texto e use diretamente a aplicação móvel oficial do seu banco no telemóvel para verificar qualquer aviso.</p>
+              </div>
+
+              <div class="caixa-alerta evitar">
+                <p class="titulo-alerta vermelho">❌ EVITE:</p>
+                <p>Nunca clique em ligações ou links recebidos através de números de telefone que não conhece.</p>
+              </div>
+            </div>
+          </details>
+
+        </div>
+      </section>
+
+      <section aria-label="Desafio de treino">
+        <h2 class="titulo-secao">🛡️ Treino de Segurança Interativo</h2>
+        
+        <div class="cartao-simulador">
+          <p style="margin-bottom: 1.2rem;">Faça de conta que recebeu a seguinte mensagem de texto no ecrã do seu telemóvel. Analise o conteúdo:</p>
+
+          <div class="maquete-telemovel">
+            <div class="cabecalho-telemovel">Mensagem de Alerta</div>
+            <div class="balao-sms">
+              ALERTA SEGURANÇA: Detetámos um acesso suspeito na sua conta bancária. Para evitar a suspensão imediata, clique em: <span class="link-sms">www.seguro-banco-ajuda.com/bloqueio</span>
+            </div>
+          </div>
+
+          <p style="text-align: center; margin-top: 1rem; font-weight: bold;">O que faria nesta situação?</p>
+
+          <div class="opcoes-quiz">
+            <button id="btn-quiz-seguro" class="botao-quiz" onclick="submitQuiz('seguro')">🟢 É SEGURO: Vou clicar para confirmar</button>
+            <button id="btn-quiz-fraude" class="botao-quiz" onclick="submitQuiz('fraude')">🚨 É FRAUDE: Vou apagar e ignorar</button>
+          </div>
+
+          <div id="caixa-resultado-quiz" class="resposta-quiz">
+            <h3 id="titulo-resultado-quiz" style="margin-bottom: 0.5rem;"></h3>
+            <p id="texto-resultado-quiz"></p>
+          </div>
+
+        </div>
+      </section>
+
+      <section aria-label="Lista de verificação de hábitos">
+        <div class="cartao-checklist">
+          <h2 class="titulo-secao">✅ O meu Checklist de Segurança</h2>
+          <p style="margin-bottom: 1rem;">Marque as práticas de proteção digital que já adota no seu dia a dia:</p>
+          
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <span style="font-weight: bold;">Progresso:</span>
+            <span id="porcentagem-checklist" style="font-weight: bold; color: var(--success-color);">0% Completo</span>
+          </div>
+          <div class="contentor-progresso">
+            <div id="barra-checklist" class="barra-progresso"></div>
+          </div>
+
+          <div style="margin-top: 1.5rem;">
+            
+            <label class="item-checklist" id="item-1">
+              <input type="checkbox" class="caixa-selecao-gigante" onchange="toggleChecklist('item-1')">
+              <span class="texto-checklist">Tenho palavras-passe exclusivas e diferentes para as minhas aplicações mais importantes.</span>
+            </label>
+
+            <label class="item-checklist" id="item-2">
+              <input type="checkbox" class="caixa-selecao-gigante" onchange="toggleChecklist('item-2')">
+              <span class="texto-checklist">Evito utilizar ligações de Wi-Fi públicas sem palavra-passe quando acedo à minha conta bancária.</span>
+            </label>
+
+            <label class="item-checklist" id="item-3">
+              <input type="checkbox" class="caixa-selecao-gigante" onchange="toggleChecklist('item-3')">
+              <span class="checklist-text">Não partilho códigos de segurança temporários recebidos por SMS com ninguém.</span>
+            </label>
+
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="Contactos de emergência">
+        <div class="cartao-contactos">
+          <h3>📞 Precisa de apoio rápido?</h3>
+          <p>Caso tenha dúvidas ou suspeite que foi alvo de fraude, entre em contacto imediatamente com os canais de apoio:</p>
+          
+          <ul class="lista-contactos">
+            <li>
+              <a href="tel:112" class="botao-item-contacto" title="Ligar para o número de emergência nacional">
+                <span>Polícia / Emergência (Nacional)</span>
+                <span class="emblema-telefone-contacto">Ligue 112</span>
+              </a>
+            </li>
+            <li>
+              <div class="botao-item-contacto" style="cursor: default;">
+                <span>Familiar próximo da sua confiança</span>
+                <span class="emblema-telefone-contacto" style="background-color: var(--text-muted);">Faça uma chamada de voz</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="rodape-app">
+      <div class="nota-rodape">
+        <p><strong>Navegue de forma livre e segura pela internet!</strong></p>
+        <p style="margin-top: 0.5rem;">Este guia prático foi criado para o ajudar. Guarde esta página para consultar sempre que precisar.</p>
+      </div>
+    </footer>
+
+  </div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
