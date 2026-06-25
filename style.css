@@ -524,3 +524,6 @@ details.cartao-dica[open] summary.cabecalho-dica::after {
     text-align: center;
   }
 }
+button.cartao-dica{width:100%;padding:1.4rem;background:var(--card-bg);border:2px solid var(--border-color);border-radius:var(--border-radius);cursor:pointer;text-align:left;color:var(--text-color)}
+.modal-dica{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:999;align-items:center;justify-content:center}
+.modal-dica.mostrar{display:flex}.janela-modal{background:white;padding:2rem;border-radius:16px;max-width:600px}.fechar-modal{float:right;font-size:2rem;border:0;background:none}

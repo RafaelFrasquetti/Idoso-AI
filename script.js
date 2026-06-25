@@ -102,3 +102,5 @@ function toggleChecklist(idItem) {
   document.getElementById('barra-checklist').style.width = percentagem + '%';
   document.getElementById('porcentagem-checklist').textContent = percentagem + '% Completo';
 }
+document.querySelectorAll(".cartao-dica").forEach(c=>c.onclick=()=>document.getElementById(c.dataset.modal).classList.add("mostrar"));
+document.querySelectorAll(".fechar-modal").forEach(b=>b.onclick=()=>b.closest(".modal-dica").classList.remove("mostrar"));
