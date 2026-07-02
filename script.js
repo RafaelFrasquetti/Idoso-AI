@@ -104,3 +104,56 @@ function toggleChecklist(idItem) {
 }
 document.querySelectorAll(".cartao-dica").forEach(c=>c.onclick=()=>document.getElementById(c.dataset.modal).classList.add("mostrar"));
 document.querySelectorAll(".fechar-modal").forEach(b=>b.onclick=()=>b.closest(".modal-dica").classList.remove("mostrar"));
+
+let lendo = false;
+const sintese = window.speechSynthesis;
+const mensagem = new SpeechSynthesisUtterance();
+
+function alternarLeitura() {
+  const btnLer = document.getElementById('btn-ler-texto');
+
+  if (lendo) {
+    // Se já estiver a ler, para a leitura
+    sintese.cancel();
+    lendo = false;
+    btnLer.classList.remove('ativo');
+    btnLer.innerHTML = '🔊 Ler Página';
+  } else {
+    // Se não estiver a ler, inicia a leitura
+    // Selecionamos o conteúdo da tag <main> para evitar ler menus repetitivos
+    const conteudoPrincipal = document.querySelector('main');
+    
+    if (conteudoPrincipal) {
+      mensagem.text = conteudoPrincipal.innerText;
+      
+      // Configurações da voz
+      mensagem.lang = 'pt-PT'; // Pode mudar para 'pt-BR' se o público for brasileiro
+      mensagem.rate = 0.85;    // Velocidade um pouco mais lenta para facilitar a compreensão
+      mensagem.pitch = 1.0;    // Tom de voz normal
+
+      // Quando a leitura terminar naturalmente, reinicia o botão
+      mensagem.onend = function() {
+        lendo = false;
+        btnLer.classList.remove('ativo');
+        btnLer.innerHTML = '🔊 Ler Página';
+      };
+
+      // Inicia o áudio
+      sintese.speak(mensagem);
+      lendo = true;
+      
+      // Atualiza o aspeto do botão
+      btnLer.classList.add('ativo');
+      btnLer.innerHTML = '⏹️ Parar Leitura';
+    } else {
+      alert("Não foi possível encontrar o texto principal para leitura.");
+    }
+  }
+}
+
+// Para garantir que a leitura para se o utilizador fechar ou mudar de página
+window.addEventListener('beforeunload', () => {
+  if (sintese.speaking) {
+    sintese.cancel();
+  }
+});
